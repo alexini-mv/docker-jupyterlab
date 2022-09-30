@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+
+  jupyter:
+    container_name: jupyterlab
+    build:
+      context: .
+      args:
+        JUPYTER_PASS: abc123
+    ports:
+      - "9000:9000"
+    volumes:
+      - /home/jupyter:/home
+    restart: unless-stopped
+
+    
